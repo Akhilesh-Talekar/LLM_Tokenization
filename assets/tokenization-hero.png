@@ -1,0 +1,7 @@
+PNG placeholder - This is a placeholder for the tokenization hero banner.
+To create a proper PNG, use the tokenization-hero.svg file and convert it using tools like:
+- Inkscape
+- ImageMagick: convert tokenization-hero.svg tokenization-hero.png
+- Online converters like CloudConvert
+
+The SVG source is available in this same directory.

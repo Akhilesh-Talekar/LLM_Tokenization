@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700">
+  <defs>
+    <linearGradient id="bgGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0c29;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#302b63;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#24243e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="inputGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#11998e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#38ef7d;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="processGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="outputGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="arrowGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="4" stdDeviation="4" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1000" height="700" fill="url(#bgGradient2)"/>
+  
+  <!-- Title -->
+  <text x="500" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="white">⚙️ End-to-End Tokenization Pipeline</text>
+  
+  <!-- Step 1: Raw Text Input -->
+  <rect x="50" y="80" width="180" height="100" rx="15" fill="url(#inputGrad)" filter="url(#shadow)"/>
+  <text x="140" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">📝 RAW TEXT</text>
+  <rect x="65" y="125" width="150" height="40" rx="5" fill="rgba(255,255,255,0.2)"/>
+  <text x="140" y="150" text-anchor="middle" font-family="monospace" font-size="12" fill="white">"Hello World!"</text>
+  
+  <!-- Arrow 1 -->
+  <path d="M235 130 L285 130" stroke="url(#arrowGrad2)" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="295,130 280,123 280,137" fill="#00f2fe"/>
+  
+  <!-- Step 2: Normalization -->
+  <rect x="300" y="80" width="180" height="100" rx="15" fill="url(#processGrad)" filter="url(#shadow)"/>
+  <text x="390" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">🔧 NORMALIZE</text>
+  <text x="390" y="140" text-anchor="middle" font-family="Arial" font-size="11" fill="rgba(255,255,255,0.9)">• Unicode normalization</text>
+  <text x="390" y="158" text-anchor="middle" font-family="Arial" font-size="11" fill="rgba(255,255,255,0.9)">• Lowercase (optional)</text>
+  <text x="390" y="176" text-anchor="middle" font-family="Arial" font-size="11" fill="rgba(255,255,255,0.9)">• Whitespace cleanup</text>
+  
+  <!-- Arrow 2 -->
+  <path d="M485 130 L535 130" stroke="url(#arrowGrad2)" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="545,130 530,123 530,137" fill="#00f2fe"/>
+  
+  <!-- Step 3: Pre-tokenization -->
+  <rect x="550" y="80" width="180" height="100" rx="15" fill="url(#processGrad)" filter="url(#shadow)"/>
+  <text x="640" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">✂️ PRE-TOKENIZE</text>
+  <text x="640" y="140" text-anchor="middle" font-family="Arial" font-size="11" fill="rgba(255,255,255,0.9)">• Split on whitespace</text>
+  <text x="640" y="158" text-anchor="middle" font-family="Arial" font-size="11" fill="rgba(255,255,255,0.9)">• Handle punctuation</text>
+  <text x="640" y="176" text-anchor="middle" font-family="Arial" font-size="11" fill="rgba(255,255,255,0.9)">• Initial word splits</text>
+  
+  <!-- Arrow 3 -->
+  <path d="M735 130 L785 130" stroke="url(#arrowGrad2)" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="795,130 780,123 780,137" fill="#00f2fe"/>
+  
+  <!-- Step 4: Subword Tokenization -->
+  <rect x="800" y="80" width="180" height="100" rx="15" fill="url(#processGrad)" filter="url(#shadow)"/>
+  <text x="890" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">🧩 TOKENIZE</text>
+  <text x="890" y="140" text-anchor="middle" font-family="Arial" font-size="11" fill="rgba(255,255,255,0.9)">• BPE / WordPiece</text>
+  <text x="890" y="158" text-anchor="middle" font-family="Arial" font-size="11" fill="rgba(255,255,255,0.9)">• Subword splitting</text>
+  <text x="890" y="176" text-anchor="middle" font-family="Arial" font-size="11" fill="rgba(255,255,255,0.9)">• Vocab lookup</text>
+  
+  <!-- Curved arrow down -->
+  <path d="M890 185 L890 220 Q890 240 870 240 L200 240 Q180 240 180 260 L180 280" stroke="url(#arrowGrad2)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <polygon points="180,290 173,275 187,275" fill="#00f2fe"/>
+  
+  <!-- Row 2 -->
+  
+  <!-- Tokens Display -->
+  <rect x="50" y="300" width="280" height="80" rx="15" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+  <text x="190" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">Tokens:</text>
+  <rect x="65" y="340" width="55" height="28" rx="5" fill="url(#outputGrad)"/>
+  <text x="92" y="359" text-anchor="middle" font-family="monospace" font-size="11" fill="white">Hello</text>
+  <rect x="125" y="340" width="35" height="28" rx="5" fill="url(#outputGrad)"/>
+  <text x="142" y="359" text-anchor="middle" font-family="monospace" font-size="11" fill="white">▁</text>
+  <rect x="165" y="340" width="55" height="28" rx="5" fill="url(#outputGrad)"/>
+  <text x="192" y="359" text-anchor="middle" font-family="monospace" font-size="11" fill="white">World</text>
+  <rect x="225" y="340" width="30" height="28" rx="5" fill="url(#outputGrad)"/>
+  <text x="240" y="359" text-anchor="middle" font-family="monospace" font-size="11" fill="white">!</text>
+  
+  <!-- Arrow -->
+  <path d="M335 340 L385 340" stroke="url(#arrowGrad2)" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="395,340 380,333 380,347" fill="#00f2fe"/>
+  
+  <!-- Step 5: Add Special Tokens -->
+  <rect x="400" y="300" width="200" height="80" rx="15" fill="url(#processGrad)" filter="url(#shadow)"/>
+  <text x="500" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">➕ SPECIAL TOKENS</text>
+  <text x="500" y="355" text-anchor="middle" font-family="monospace" font-size="12" fill="rgba(255,255,255,0.9)">[CLS] ... tokens ... [SEP]</text>
+  <text x="500" y="375" text-anchor="middle" font-family="Arial" font-size="10" fill="rgba(255,255,255,0.7)">Add start/end markers</text>
+  
+  <!-- Arrow -->
+  <path d="M605 340 L655 340" stroke="url(#arrowGrad2)" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="665,340 650,333 650,347" fill="#00f2fe"/>
+  
+  <!-- Step 6: Token to ID -->
+  <rect x="670" y="300" width="180" height="80" rx="15" fill="url(#processGrad)" filter="url(#shadow)"/>
+  <text x="760" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">🔢 TOKEN → ID</text>
+  <text x="760" y="355" text-anchor="middle" font-family="Arial" font-size="11" fill="rgba(255,255,255,0.9)">Vocabulary lookup</text>
+  <text x="760" y="375" text-anchor="middle" font-family="monospace" font-size="11" fill="rgba(255,255,255,0.9)">[101, 9906, 1917, 0, 102]</text>
+  
+  <!-- Curved arrow down -->
+  <path d="M760 385 L760 420 Q760 440 740 440 L200 440 Q180 440 180 460 L180 480" stroke="url(#arrowGrad2)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <polygon points="180,490 173,475 187,475" fill="#00f2fe"/>
+  
+  <!-- Row 3 -->
+  
+  <!-- Step 7: Padding/Truncation -->
+  <rect x="50" y="500" width="200" height="80" rx="15" fill="url(#processGrad)" filter="url(#shadow)"/>
+  <text x="150" y="530" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">📐 PAD/TRUNCATE</text>
+  <text x="150" y="555" text-anchor="middle" font-family="Arial" font-size="11" fill="rgba(255,255,255,0.9)">Fit to max_length</text>
+  <text x="150" y="575" text-anchor="middle" font-family="Arial" font-size="11" fill="rgba(255,255,255,0.9)">Create attention mask</text>
+  
+  <!-- Arrow -->
+  <path d="M255 540 L305 540" stroke="url(#arrowGrad2)" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="315,540 300,533 300,547" fill="#00f2fe"/>
+  
+  <!-- Step 8: Create Tensors -->
+  <rect x="320" y="500" width="200" height="80" rx="15" fill="url(#processGrad)" filter="url(#shadow)"/>
+  <text x="420" y="530" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">📊 CREATE TENSORS</text>
+  <text x="420" y="555" text-anchor="middle" font-family="monospace" font-size="10" fill="rgba(255,255,255,0.9)">input_ids: torch.Tensor</text>
+  <text x="420" y="575" text-anchor="middle" font-family="monospace" font-size="10" fill="rgba(255,255,255,0.9)">attention_mask: torch.Tensor</text>
+  
+  <!-- Arrow -->
+  <path d="M525 540 L575 540" stroke="url(#arrowGrad2)" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="585,540 570,533 570,547" fill="#00f2fe"/>
+  
+  <!-- Step 9: Embedding -->
+  <rect x="590" y="500" width="180" height="80" rx="15" fill="url(#processGrad)" filter="url(#shadow)"/>
+  <text x="680" y="530" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">🧠 EMBEDDING</text>
+  <text x="680" y="555" text-anchor="middle" font-family="Arial" font-size="11" fill="rgba(255,255,255,0.9)">ID → Dense Vector</text>
+  <text x="680" y="575" text-anchor="middle" font-family="monospace" font-size="10" fill="rgba(255,255,255,0.9)">[0.12, -0.45, ...]</text>
+  
+  <!-- Arrow -->
+  <path d="M775 540 L825 540" stroke="url(#arrowGrad2)" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="835,540 820,533 820,547" fill="#00f2fe"/>
+  
+  <!-- Final: Model Input -->
+  <rect x="840" y="500" width="140" height="80" rx="15" fill="url(#inputGrad)" filter="url(#shadow)"/>
+  <text x="910" y="535" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">🤖 MODEL</text>
+  <text x="910" y="560" text-anchor="middle" font-family="Arial" font-size="12" fill="rgba(255,255,255,0.9)">Ready for</text>
+  <text x="910" y="578" text-anchor="middle" font-family="Arial" font-size="12" fill="rgba(255,255,255,0.9)">Inference!</text>
+  
+  <!-- Decoding path (bottom) -->
+  <rect x="50" y="620" width="900" height="60" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="500" y="645" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#4facfe">🔙 DECODING: Model Output → Token IDs → Tokens → Text</text>
+  <text x="500" y="668" text-anchor="middle" font-family="Arial" font-size="12" fill="rgba(255,255,255,0.7)">[15496, 995] → ["hello", " world"] → "hello world"</text>
+</svg>

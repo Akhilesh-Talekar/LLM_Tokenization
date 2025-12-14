@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="tokenGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="arrowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="400" fill="url(#bgGradient)"/>
+  
+  <!-- Decorative circles -->
+  <circle cx="100" cy="100" r="60" fill="rgba(255,255,255,0.1)"/>
+  <circle cx="1100" cy="300" r="80" fill="rgba(255,255,255,0.1)"/>
+  <circle cx="950" cy="80" r="40" fill="rgba(255,255,255,0.1)"/>
+  <circle cx="200" cy="350" r="50" fill="rgba(255,255,255,0.1)"/>
+  
+  <!-- Title -->
+  <text x="600" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="white" filter="url(#glow)">🔤 LLM Tokenization Guide</text>
+  
+  <!-- Input Text Box -->
+  <rect x="50" y="120" width="250" height="60" rx="10" fill="white" opacity="0.95"/>
+  <text x="175" y="140" text-anchor="middle" font-family="monospace" font-size="12" fill="#666">Input Text</text>
+  <text x="175" y="165" text-anchor="middle" font-family="Arial" font-size="16" fill="#333">"Hello, World!"</text>
+  
+  <!-- Arrow 1 -->
+  <path d="M310 150 L380 150" stroke="url(#arrowGradient)" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+  <polygon points="380,150 365,143 365,157" fill="#00f2fe"/>
+  
+  <!-- Tokenizer Box -->
+  <rect x="390" y="100" width="180" height="100" rx="15" fill="rgba(255,255,255,0.95)"/>
+  <text x="480" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#764ba2" font-weight="bold">⚙️ TOKENIZER</text>
+  <text x="480" y="160" text-anchor="middle" font-family="Arial" font-size="11" fill="#666">BPE / WordPiece</text>
+  <text x="480" y="180" text-anchor="middle" font-family="Arial" font-size="11" fill="#666">SentencePiece</text>
+  
+  <!-- Arrow 2 -->
+  <path d="M580 150 L650 150" stroke="url(#arrowGradient)" stroke-width="4" fill="none"/>
+  <polygon points="650,150 635,143 635,157" fill="#00f2fe"/>
+  
+  <!-- Tokens Box -->
+  <rect x="660" y="100" width="240" height="100" rx="15" fill="rgba(255,255,255,0.95)"/>
+  <text x="780" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#764ba2" font-weight="bold">🧩 TOKENS</text>
+  
+  <!-- Individual Token boxes -->
+  <rect x="675" y="145" width="55" height="35" rx="5" fill="url(#tokenGradient)"/>
+  <text x="702" y="168" text-anchor="middle" font-family="monospace" font-size="11" fill="white">Hello</text>
+  
+  <rect x="735" y="145" width="25" height="35" rx="5" fill="url(#tokenGradient)"/>
+  <text x="747" y="168" text-anchor="middle" font-family="monospace" font-size="11" fill="white">,</text>
+  
+  <rect x="765" y="145" width="55" height="35" rx="5" fill="url(#tokenGradient)"/>
+  <text x="792" y="168" text-anchor="middle" font-family="monospace" font-size="11" fill="white">World</text>
+  
+  <rect x="825" y="145" width="25" height="35" rx="5" fill="url(#tokenGradient)"/>
+  <text x="837" y="168" text-anchor="middle" font-family="monospace" font-size="11" fill="white">!</text>
+  
+  <!-- Arrow 3 -->
+  <path d="M910 150 L980 150" stroke="url(#arrowGradient)" stroke-width="4" fill="none"/>
+  <polygon points="980,150 965,143 965,157" fill="#00f2fe"/>
+  
+  <!-- Token IDs Box -->
+  <rect x="990" y="100" width="160" height="100" rx="15" fill="rgba(255,255,255,0.95)"/>
+  <text x="1070" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#764ba2" font-weight="bold">🔢 TOKEN IDs</text>
+  <text x="1070" y="165" text-anchor="middle" font-family="monospace" font-size="14" fill="#333">[9906, 11,</text>
+  <text x="1070" y="185" text-anchor="middle" font-family="monospace" font-size="14" fill="#333">1917, 0]</text>
+  
+  <!-- Bottom Section - Key Features -->
+  <rect x="100" y="250" width="200" height="100" rx="10" fill="rgba(255,255,255,0.15)"/>
+  <text x="200" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="white" font-weight="bold">🧠 Core Concepts</text>
+  <text x="200" y="310" text-anchor="middle" font-family="Arial" font-size="12" fill="rgba(255,255,255,0.9)">Vocabulary • Subwords</text>
+  <text x="200" y="330" text-anchor="middle" font-family="Arial" font-size="12" fill="rgba(255,255,255,0.9)">Embeddings • Mappings</text>
+  
+  <rect x="350" y="250" width="200" height="100" rx="10" fill="rgba(255,255,255,0.15)"/>
+  <text x="450" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="white" font-weight="bold">⚙️ Algorithms</text>
+  <text x="450" y="310" text-anchor="middle" font-family="Arial" font-size="12" fill="rgba(255,255,255,0.9)">BPE • WordPiece</text>
+  <text x="450" y="330" text-anchor="middle" font-family="Arial" font-size="12" fill="rgba(255,255,255,0.9)">Unigram • SentencePiece</text>
+  
+  <rect x="600" y="250" width="200" height="100" rx="10" fill="rgba(255,255,255,0.15)"/>
+  <text x="700" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="white" font-weight="bold">💻 Code Examples</text>
+  <text x="700" y="310" text-anchor="middle" font-family="Arial" font-size="12" fill="rgba(255,255,255,0.9)">Hugging Face 🤗</text>
+  <text x="700" y="330" text-anchor="middle" font-family="Arial" font-size="12" fill="rgba(255,255,255,0.9)">OpenAI tiktoken</text>
+  
+  <rect x="850" y="250" width="200" height="100" rx="10" fill="rgba(255,255,255,0.15)"/>
+  <text x="950" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="white" font-weight="bold">📊 Visualizations</text>
+  <text x="950" y="310" text-anchor="middle" font-family="Arial" font-size="12" fill="rgba(255,255,255,0.9)">Pipeline Diagrams</text>
+  <text x="950" y="330" text-anchor="middle" font-family="Arial" font-size="12" fill="rgba(255,255,255,0.9)">BPE Merge Process</text>
+  
+  <!-- Footer -->
+  <text x="600" y="385" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="rgba(255,255,255,0.8)">The Complete Guide to Understanding Tokenization in Large Language Models</text>
+</svg>
